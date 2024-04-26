@@ -1,0 +1,161 @@
+|main
+A => A.IN3
+M => M.IN3
+B => B.IN3
+AL << AL.DB_MAX_OUTPUT_PORT_TYPE
+VE << Valvula:comb_7.port3
+US => US.IN3
+UA => UA.IN1
+T => T.IN1
+GT << GT.DB_MAX_OUTPUT_PORT_TYPE
+AS << AS.DB_MAX_OUTPUT_PORT_TYPE
+SL => SL.IN7
+A7 << multiplex:comb_13.port3
+B7 << multiplex:comb_14.port3
+C7 << multiplex:comb_15.port3
+D7 << multiplex:comb_16.port3
+E7 << multiplex:comb_17.port3
+F7 << multiplex:comb_18.port3
+G7 << multiplex:comb_19.port3
+DG1 << <VCC>
+DG2 << <VCC>
+DG3 << <VCC>
+BUZZ << comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Alarme:comb_6
+A => And0.IN0
+M => And0.IN1
+B => Or0.IN1
+Alarm <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Valvula:comb_7
+alarm_wire => Nor0.IN0
+alarm_wire => And0.IN0
+A => Nor0.IN1
+B => And0.IN1
+val_entrada <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Gotejamento:comb_8
+US => And0.IN0
+UA => And0.IN1
+T => NotOr0.IN0
+T => Or0.IN1
+M => NotOr0.IN1
+alarm_wire => And1.IN2
+GT <= And1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Aspersao:comb_9
+AS <= And0.DB_MAX_OUTPUT_PORT_TYPE
+GT_wire => NotOr0.IN0
+US => NotOr0.IN1
+AL => And0.IN1
+
+
+|main|exibir_matriz_nivel:comb_11
+A => and0.IN0
+A => and1.IN0
+A => And2.IN0
+A => and2.IN0
+A => and4.IN0
+A => and6.IN0
+M => and3.IN0
+M => and5.IN0
+M => and0.IN1
+M => And2.IN1
+M => and2.IN1
+M => and4.IN1
+M => and6.IN1
+B => and1.IN1
+B => and3.IN1
+B => and5.IN1
+B => And2.IN2
+a7 <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+b7 <= <VCC>
+c7 <= <VCC>
+d7 <= And2.DB_MAX_OUTPUT_PORT_TYPE
+e7 <= Or1.DB_MAX_OUTPUT_PORT_TYPE
+f7 <= Or2.DB_MAX_OUTPUT_PORT_TYPE
+g7 <= and6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|exibir_matriz_rega:comb_12
+AS => And1.IN0
+AS => And0.IN0
+AS => Or0.IN0
+US => Or0.IN1
+US => And0.IN1
+US => And1.IN1
+GT => And0.IN2
+GT => Or0.IN2
+GT => And1.IN2
+alarm_wire => And0.IN3
+alarm_wire => And1.IN3
+a7 <= <GND>
+b7 <= And0.DB_MAX_OUTPUT_PORT_TYPE
+c7 <= <GND>
+d7 <= And1.DB_MAX_OUTPUT_PORT_TYPE
+e7 <= <GND>
+f7 <= <GND>
+g7 <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_13
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_14
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_15
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_16
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_17
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_18
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|multiplex:comb_19
+Seletor => saida1.IN0
+Seletor => saida0.IN0
+in1 => saida0.IN1
+in2 => saida1.IN1
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
